@@ -1,6 +1,7 @@
 let tiles;
 let table;
 let done;
+let started;
 
 //intializing values
 window.onload = () => {
@@ -17,6 +18,7 @@ window.onload = () => {
   ];
   table = [0, 0, 0,  0, 0, 0,  0, 0, 0];
   done = false;
+  started = false;
 }
 
 //resets table, tiles and false state
@@ -27,6 +29,7 @@ let reset = () => {
     tiles[i].style.backgroundColor = "white";
   }
   document.getElementById('aiFirstButton').style.display = 'inline';
+  started = false;
 };
 
 //returns true only if a given table is full
@@ -64,6 +67,10 @@ let checkWin = (table) => {
 //this function sets value of a given index
 let set = (index, player) => {
   if(done)return false;
+  if(!started){
+    started = true;
+    document.getElementById('aiFirstButton').style.display = 'none';
+  }
   if(!table[index]){
     table[index] = player;
     let color;
