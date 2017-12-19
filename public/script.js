@@ -2,6 +2,7 @@ let tiles;
 let table;
 let done;
 
+//intializing values
 window.onload = () => {
   tiles = [
     document.getElementById('0'),
@@ -16,18 +17,19 @@ window.onload = () => {
   ];
   table = [0, 0, 0,  0, 0, 0,  0, 0, 0];
   done = false;
-  //aiMakeMove();
 }
 
+//resets table, tiles and false state
 let reset = () => {
   table = [0, 0, 0,  0, 0, 0,  0, 0, 0];
   done = false;
   for(i in tiles){
     tiles[i].style.backgroundColor = "white";
   }
-  //aiMakeMove();
-}
+  document.getElementById('aiFirstButton').style.display = 'inline';
+};
 
+//returns true only if a given table is full
 let checkFull = (t) => {
   for(let i = 0; i < 9; i++){
     if(!t[i])return false;
@@ -35,6 +37,8 @@ let checkFull = (t) => {
   return true;
 };
 
+//if noone won this function returns "false"
+//if someone won function returns that player (1 / -1)
 let checkWin = (table) => {
   let sumPos = (a, b, c) => {
     let tmp = table[a] + table[b] + table[c];
@@ -57,6 +61,7 @@ let checkWin = (table) => {
   return false;
 };
 
+//this function sets value of a given index
 let set = (index, player) => {
   if(done)return false;
   if(!table[index]){
@@ -69,6 +74,7 @@ let set = (index, player) => {
   return false;
   };
 
+//this function returns index of best move for a given board and player
 let aiBestMove = (board, depth,  player, turn) => {
   if(checkWin(board)) return -10 + depth;
   if(checkFull(board)) return 0;
@@ -92,10 +98,12 @@ let aiBestMove = (board, depth,  player, turn) => {
   return max;
 }
 
+//this function makes ai make the best possible move
 let aiMakeMove = () => {
   set(aiBestMove(table, 0, -1, false), -1);
 };
 
+//this function is called when player clicks on a cell
 function clicked(index){
   if(done)return false;
   if(!set(index, 1))return false;
@@ -116,4 +124,11 @@ function clicked(index){
     done = true;
     return console.log('COMPUTER WINS', table);
   }
+}
+
+//this function is called when player wants ai to go first
+let aiGoesFirst = () => {
+  for(i in table) if(table[i]) return false;
+  aiMakeMove();
+  document.getElementById('aiFirstButton').style.display = 'none';
 }

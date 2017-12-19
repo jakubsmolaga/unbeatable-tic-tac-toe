@@ -3,9 +3,10 @@ body {
 }
 
 h1 {
-  text-align: center;
+  font-size: 40px;
   color: white;
   text-decoration-line: overline;
+  text-shadow: 0 0 10px #000 ;
 }
 
 table {
@@ -15,10 +16,10 @@ table {
 }
 
 button {
-  position: relative;
-  align: center;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 0px #000;
 }
 
 .tiles {
@@ -27,6 +28,7 @@ button {
   height: 100px;
   border-style: solid;
   border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px #000;
 }
 
 #container {
@@ -37,4 +39,7 @@ button {
   background-color: gray;
   width: 550px;
   border-radius: 40px;
+  text-align: center;
+
+  box-shadow: 0px 0px 15px 5px #000;
 }
