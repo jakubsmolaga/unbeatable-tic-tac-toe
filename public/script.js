@@ -16,6 +16,7 @@ window.onload = () => {
   ];
   table = [0, 0, 0,  0, 0, 0,  0, 0, 0];
   done = false;
+  //aiMakeMove();
 }
 
 let reset = () => {
@@ -24,6 +25,7 @@ let reset = () => {
   for(i in tiles){
     tiles[i].style.backgroundColor = "white";
   }
+  //aiMakeMove();
 }
 
 let checkFull = (t) => {

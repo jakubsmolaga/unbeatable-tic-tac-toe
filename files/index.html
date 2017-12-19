@@ -2,30 +2,28 @@
 <html>
   <head>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Unbeatable 1</title>
   </head>
   <body>
-    <h1>Some Text</h1>
-    
-    <div width="100px" height="100px" style="position: absolute; left:0px; top: 100px; width:100px; max-width:100px; height:100px; max-height:100px; background-color: white; border-style: solid;"
-    id="0" onclick="clicked(0)"></div>
-    <div width="100px" height="100px" style="position: absolute; left:100px; top: 100px; width:100px; max-width:100px; height:100px; max-height:100px; background-color: white; border-style: solid;"
-    id="1" onclick="clicked(1)"></div>
-    <div width="100px" height="100px" style="position: absolute; left:200px; top: 100px; width:100px; max-width:100px; height:100px; max-height:100px; background-color: white; border-style: solid;"
-    id="2" onclick="clicked(2)"></div>
-    <div width="100px" height="100px" style="position: absolute; left:0px; top: 200px; width:100px; max-width:100px; height:100px; max-height:100px; background-color: white; border-style: solid;"
-    id="3" onclick="clicked(3)"></div>
-    <div width="100px" height="100px" style="position: absolute; left:100px; top: 200px; width:100px; max-width:100px; height:100px; max-height:100px; background-color: white; border-style: solid;"
-    id="4" onclick="clicked(4)"></div>
-    <div width="100px" height="100px" style="position: absolute; left:200px; top: 200px; width:100px; max-width:100px; height:100px; max-height:100px; background-color: white; border-style: solid;"
-    id="5" onclick="clicked(5)"></div>
-    <div width="100px" height="100px" style="position: absolute; left:0px; top: 300px; width:100px; max-width:100px; height:100px; max-height:100px; background-color: white; border-style: solid;"
-    id="6" onclick="clicked(6)"></div>
-    <div width="100px" height="100px" style="position: absolute; left:100px; top: 300px; width:100px; max-width:100px; height:100px; max-height:100px; background-color: white; border-style: solid;"
-    id="7" onclick="clicked(7)"></div>
-    <div width="100px" height="100px" style="position: absolute; left:200px; top: 300px; width:100px; max-width:100px; height:100px; max-height:100px; background-color: white; border-style: solid;"
-    id="8" onclick="clicked(8)"></div>
-
+    <div id="container">
+    <h1>Tic-Tac-Toe</h1>
+    <table>
+      <tr>
+        <td><div class="tiles" id="0" onclick="clicked(0)"></div></td>
+        <td><div class="tiles" id="1" onclick="clicked(1)"></div></td>
+        <td><div class="tiles" id="2" onclick="clicked(2)"></div></td>
+      </tr><tr>
+        <td><div class="tiles" id="3" onclick="clicked(3)"></div></td>
+        <td><div class="tiles" id="4" onclick="clicked(4)"></div></td>
+        <td><div class="tiles" id="5" onclick="clicked(5)"></div></td>
+      </tr><tr>
+        <td><div class="tiles" id="6" onclick="clicked(6)"></div></td>
+        <td><div class="tiles" id="7" onclick="clicked(7)"></div></td>
+        <td><div class="tiles" id="8" onclick="clicked(8)"></div></td>
+      </tr>
+    </table>
     <button onclick="reset()">RESET</button>
+</div>
   </body>
 </html>
